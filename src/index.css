@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-app-primary: #D4AA7D;
+  --color-app-secondary: #272727;
+}
+
+.radix-themes {
+  --color-background: #272727 !important;
+  --color-panel-solid: #272727 !important;
+  --color-overlay: rgba(0, 0, 0, 0.6) !important;
+  --accent-1: #272727;
+  --accent-2: #2e2820;
+  --accent-3: #3d3420;
+  --accent-9: #D4AA7D;
+  --accent-10: #c49a6d;
+  --accent-11: #D4AA7D;
+  --accent-12: #f0d9b5;
+  
+  --gray-1: #272727;
+  --gray-2: #2f2f2f;
+  --gray-3: #3a3a3a;
+  --gray-12: #ede0cf;
+}
