@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+//Shema za formo, da jo lahko zod validira
 export const formSchema = z.object({
   Ime: z.string().min(3),
   Priimek: z.string().min(3),

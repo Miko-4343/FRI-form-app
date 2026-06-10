@@ -19,7 +19,7 @@ const Form = () => {
     reset,
     control,
   } = useForm({
-    resetOptions: { keepErrors: false },
+    resetOptions: { keepErrors: false }, // pobriše error message pri resetu
     defaultValues: {
       Ime: "",
       Priimek: "",
@@ -31,8 +31,13 @@ const Form = () => {
       "E-pošta": "",
       "Rojstni dan": null,
     },
-  });
+  }); // default values, zato da reset ve na kaj naj jih nastavi
   const mutation = useSendData();
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset();
+    }
+  }, [formState.isSubmitSuccessful, reset]); // funkcija, ki se zgodi ob mountingu in vsakič, ko je se posodbi stanje isSubmitsuccessful in  nato pokliče reset
   const onSubmit = (data: form) => {
     const res = ValidatedataFull(data);
 
@@ -45,14 +50,9 @@ const Form = () => {
     } else {
       toast.error(res.error.issues[0].message);
     }
-  };
+  }; // funkcija, ki simulira pošiljanje podatkov iz forme
 
   let filtriranaPolja = polja.filter((elem) => elem.label !== "Dummy text");
-  useEffect(() => {
-    if (formState.isSubmitSuccessful) {
-      reset();
-    }
-  }, [formState.isSubmitSuccessful, reset]);
   return (
     <main>
       <div className="bg-app-primary text-app-secondary p-2 m-2 rounded-[20px] grid justify-center">

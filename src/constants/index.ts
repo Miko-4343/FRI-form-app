@@ -1,3 +1,5 @@
+//Konstante za lažje spreminjanje podatkov, ki se izpišejo uporabniku
+
 export const polja = [
   {
     label: "Ime",

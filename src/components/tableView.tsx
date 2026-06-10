@@ -111,7 +111,7 @@ const TableView = () => {
     state: {
       pagination,
       globalFilter,
-    }, // omogoči uporabo moji stanj za tabelo
+    }, // omogoči uporabo mojih stanj za tabelo
     onPaginationChange: setPagination, // nastavi potrebne vrednosti za pagination
     onGlobalFilterChange: setGlobalFilter, // nastavi filter, ki ga vnese uporabnik
   });
